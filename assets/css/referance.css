@@ -1,0 +1,46 @@
+.references-carousel {
+  overflow: hidden; /* Dışarı taşanları gizle */
+  width: 100%;
+  padding: 22px 0px 0px 0px;
+}
+
+/* TRACK ANIMATION */
+.carousel-track {
+  display: flex;
+  width: max-content;
+  gap: 40px;
+  animation: bounce-scroll 5s ease-in-out infinite alternate;
+}
+
+/* LOGO ITEM */
+.logo-item {
+  flex-shrink: 0;
+}
+
+.logo-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: contain; /* KESME YOK */
+  display: block;
+}
+
+@keyframes bounce-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + 100vw));
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .carousel-track {
+    gap: 20px;
+  }
+  .logo-item img {
+    width: 70px;
+    height: 70px;
+  }
+}

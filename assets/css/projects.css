@@ -1,0 +1,155 @@
+.projects-section {
+  padding: 60px 20px;
+  background-color: #fdf6ec;
+  font-family: "Google Sans", sans-serif;
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-video {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Play button sağ üst köşe */
+.play-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: black;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  padding: 0;
+}
+
+.play-icon {
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* buton tıklamayı engellemez */
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7));
+  border-top-left-radius: 22px;
+  border-top-right-radius: 22px;
+  height: 160px; /* 🔥 SABİT YÜKSEKLİK */
+
+  color: #fff;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.project-title {
+  margin: 0 0 10px;
+  font-size: 1.5rem;
+}
+
+.project-description {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Responsive */
+/* =====================
+   PROJECTS SECTION - MOBILE
+===================== */
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 2rem; /* Başlık küçültüldü */
+    margin-bottom: 30px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; /* Tek sütun mobilde */
+    gap: 20px;
+  }
+
+  .project-card {
+    width: 100%;
+  }
+
+  .project-video {
+    height: 250px; /* Mobilde daha kısa */
+  }
+
+  .play-btn {
+    width: 35px;
+    height: 35px;
+  }
+
+  .play-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .project-overlay {
+    padding: 15px;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+  }
+
+  .project-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Daha küçük ekranlar için (telefonlar) */
+@media (max-width: 480px) {
+  .projects-section {
+    padding: 40px 15px;
+  }
+
+  .projects-title {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+
+  .project-video {
+    height: 200px;
+  }
+
+  .project-overlay {
+    padding: 12px;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .project-description {
+    font-size: 0.85rem;
+  }
+}

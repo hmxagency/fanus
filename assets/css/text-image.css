@@ -1,0 +1,161 @@
+.text-image-section {
+  padding: 100px 60px;
+  background-color: var(--bg-main, #fdf6ec);
+}
+
+.ti-container {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.ti-container.reverse {
+  flex-direction: row-reverse;
+}
+
+/* SOL TARAF */
+.ti-text {
+  flex: 1;
+}
+
+.ti-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.ti-text h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  color: var(--text-sec);
+}
+
+.ti-text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: var(--text-sec);
+  margin-bottom: 30px;
+}
+
+.ti-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: var(--bg-accent);
+  color: #fff;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ti-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* SAĞ TARAF */
+.ti-image {
+  flex: 0.8;
+}
+
+.ti-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  object-fit: cover;
+}
+
+.ti-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 120px; /* iki satır arası mesafe */
+}
+
+/* RESPONSIVE */
+/* =====================
+   MOBILE / TABLET
+===================== */
+@media (max-width: 900px) {
+  .ti-container {
+    flex-direction: column; /* Dikey sıralama */
+    text-align: center;
+    gap: 40px; /* Dikey boşluk küçültüldü */
+  }
+
+  .ti-container.reverse {
+    flex-direction: column; /* Reverse mobilde de dikey */
+  }
+
+  /* Metin alanı */
+  .ti-text {
+    flex: 1;
+    width: 100%;
+  }
+
+  .ti-text h2 {
+    font-size: 2rem; /* Küçültüldü */
+    margin-bottom: 15px;
+  }
+
+  .ti-text h3 {
+    font-size: 1.4rem; /* Küçültüldü */
+    margin-bottom: 15px;
+  }
+
+  .ti-text p {
+    font-size: 1rem; /* Küçültüldü */
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+
+  .ti-btn {
+    padding: 12px 24px; /* Daha küçük mobil buton */
+    font-size: 0.95rem;
+  }
+
+  /* Görsel alanı */
+  .ti-image {
+    flex: 1;
+    width: 100%;
+  }
+
+  .ti-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  /* Wrapper gap küçültüldü */
+  .ti-wrapper {
+    gap: 60px;
+  }
+}
+
+/* Daha küçük ekranlar için (mobil telefonlar) */
+@media (max-width: 480px) {
+  .text-image-section {
+    padding: 60px 20px; /* Daha dar padding */
+  }
+
+  .ti-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .ti-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .ti-text p {
+    font-size: 0.95rem;
+  }
+
+  .ti-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .ti-wrapper {
+    gap: 40px;
+  }
+}

@@ -1,0 +1,58 @@
+.contact-section {
+  position: relative;
+  height: 300px;
+  background: url("https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?_gl=1*17i9efk*_ga*MTY4NTQxMzY0OC4xNzY2MDQwNzM2*_ga_8JE65Q40S6*czE3NjYwNTY1OTckbzMkZzEkdDE3NjYwNTc1ODQkajIzJGwwJGgw/1200x400")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6); /* şeffaf karartma */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+}
+
+.contact-item i {
+  font-size: 1.5rem;
+  color: #00bfa5; /* turkuaz ton */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-details {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

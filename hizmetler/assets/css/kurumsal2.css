@@ -1,0 +1,633 @@
+/* =========================
+   RESET & GENEL AYARLAR
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 50px 24px;
+}
+
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  transform: translateX(100%);
+  transition: transform 0.6s ease-in-out;
+}
+
+.slide.active {
+  transform: translateX(0);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================
+   BAŞLIKLAR
+========================= */
+.section-title {
+  text-align: center;
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin-bottom: 26px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+p {
+  margin-bottom: 16px;
+}
+
+/* =========================
+   BUTONLAR
+========================= */
+.cta-group {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.btn-primary {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: #1e4fd8;
+}
+
+.btn-outline {
+  border: 1px solid #d1d5db;
+  color: #111827;
+  background-color: #ffffff;
+}
+
+.btn-outline:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+.pricing-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.pricing-actions .btn {
+  flex: 1;
+  display: flex;
+  align-items: center; /* dikey ortala */
+  justify-content: center; /* yatay ortala */
+  text-align: center;
+}
+
+/* =========================
+   VIDEO + METİN
+========================= */
+.image-text-top {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+/* Sol görsel */
+.hero-img {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  height: 50%;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 18px;
+  background-color: #f5f5f5; /* isteğe bağlı arka plan */
+}
+
+.hero-img img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  border-radius: 22px;
+}
+
+/* Sağ metin */
+.image-text-top .text {
+  flex: 1;
+}
+
+.image-text-top .text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+/* Butonlar */
+.cta-group {
+  margin-top: 24px;
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   WEB DESIGN DETAIL
+========================= */
+.web-design-detail {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.detail-text {
+  font-size: 1.1rem;
+  margin: 0 auto;
+}
+.detail-list ul {
+  list-style: none;
+}
+
+.detail-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.detail-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+/* =========================
+   HİZMETLER
+========================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.service-box {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 28px;
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.service-box h3 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.service-box ul {
+  list-style: none;
+}
+
+.service-box li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.service-box li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.service-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+}
+
+/* =========================
+   SATIŞ ODAK
+========================= */
+.conversion-focus {
+  width: 90%;
+  margin: 0 auto; /* ortala */
+  padding: 10px 0;
+
+  background-image: url("../img/kurumsal/iletişim.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #ffffff;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.conversion-focus::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.6); /* karartma seviyesi */
+  z-index: 0;
+}
+
+.conversion-focus .container {
+  position: relative;
+  z-index: 1;
+  padding: 20px;
+}
+
+.conversion-focus h2 {
+  color: #ffffff;
+}
+
+.conversion-focus p {
+  color: #d1d5db;
+}
+
+.conversion-focus ul {
+  list-style: none;
+  margin: 24px 0;
+}
+
+.conversion-focus li {
+  position: relative;
+  padding-left: 24px;
+}
+
+.conversion-focus li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.conversion-focus strong {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.05rem;
+}
+
+/* =========================
+    Button
+  =========================*/
+
+.conversion-cta {
+  display: flex;
+  gap: 18px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+/* ORTAK BUTON */
+.conversion-cta .btn {
+  position: relative;
+  padding: 15px 34px;
+  border-radius: 999px; /* pill */
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* PARLAK KATMAN */
+.conversion-cta .btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.35),
+    rgba(255, 255, 255, 0.05)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* HOVER EFEKT */
+.conversion-cta .btn:hover::before {
+  opacity: 1;
+}
+
+/* ARA */
+.btn-call {
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+}
+
+.btn-call:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(37, 99, 235, 0.45);
+}
+
+/* WHATSAPP */
+.btn-whatsapp {
+  background: linear-gradient(135deg, #22c55e, #15803d);
+  color: #ffffff;
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(34, 197, 94, 0.45);
+}
+
+/* =========================
+    HASHTAG
+    ======================*/
+.conversion-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.conversion-text ul {
+  list-style: none;
+  margin: 24px 0;
+}
+
+.conversion-text li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.conversion-text li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #60a5fa;
+  font-weight: 600;
+}
+
+.conversion-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: flex-end;
+}
+
+.conversion-tags span {
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  white-space: nowrap;
+}
+
+/*  =======================
+        Sosyal medya
+    ======================*/
+
+.conversion-social {
+  text-align: center;
+}
+
+.conversion-social h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #e9e9e9;
+}
+
+.social-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+.social-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Platform renkleri */
+.social-icon.instagram {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+}
+
+.social-icon.facebook {
+  background-color: #1877f2;
+}
+
+.social-icon.youtube {
+  background-color: #ff0000;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+/* =========================
+    Pricing
+  ========================*/
+
+.pricing-section {
+  padding: 100px 0;
+  background-color: #f9fafb;
+}
+
+.section-desc {
+  max-width: 600px;
+  margin: 0 auto 60px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.pricing-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 26px 14px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.pricing-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 36px;
+}
+
+.pricing-card ul li {
+  padding: 5px 0;
+  border-bottom: 1px dashed #e5e7eb;
+  font-size: 0.95rem;
+}
+
+.pricing-card ul li:last-child {
+  border-bottom: none;
+}
+
+/* POPÜLER */
+.pricing-card.popular {
+  border: 2px solid #2563eb;
+  transform: scale(1.04);
+}
+
+.pricing-card .badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #2563eb;
+  color: #ffffff;
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* MOBİL */
+@media (max-width: 992px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-card.popular {
+    transform: none;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 992px) {
+  section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .video-text-top,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  .conversion-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .conversion-tags {
+    justify-content: flex-start;
+    margin-top: 32px;
+  }
+}
+
+/* MOBİL */
+@media (max-width: 576px) {
+  .conversion-cta {
+    flex-direction: column;
+  }
+
+  .conversion-cta .btn {
+    width: 100%;
+    text-align: center;
+  }
+}

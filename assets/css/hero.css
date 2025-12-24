@@ -1,0 +1,241 @@
+/* HERO ANA LAYOUT */
+.hero-section {
+  padding-top: 60px;
+}
+
+.hero-container {
+  display: flex;
+  margin: 0 auto;
+  height: calc(
+    100vh - 60px
+  ); /* Ekranın geri kalanına tam oturur, taşma yapmaz */
+}
+
+/* SLIDER %75 */
+.hero-slider {
+  position: relative;
+  width: 75%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translateX(100%);
+  transition: transform 0.8s ease;
+}
+
+.slide.active {
+  transform: translateX(0);
+  z-index: 2;
+}
+.slide.prev {
+  transform: translateX(-100%);
+}
+
+.slider-track {
+  display: flex;
+  width: 500%;
+  height: 100%;
+  transition: transform 0.8s ease;
+}
+
+/* KARTLAR ALANI %25 */
+.hero-content {
+  flex: 0 0 25%;
+  display: flex;
+  align-items: stretch; /* Kartları tüm yüksekliğe yayar */
+}
+
+.slider-content {
+  position: absolute;
+  z-index: 10;
+  top: 40%;
+  left: 5%;
+  transform: translateY(-50%);
+  max-width: 400px;
+  color: #fff;
+}
+
+.slider-content h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin: 0 0 10px 0;
+}
+
+.slider-content p {
+  font-size: 1.5rem;
+  margin: 0 0 60px 0; /* buton için alt boşluk */
+}
+
+/* Buton sabit pozisyon */
+.hero-btn {
+  position: absolute;
+  bottom: 15; /* slider-content içinde en altta sabitler */
+  left: 0;
+  padding: 16px 22px;
+  background-color: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 22px;
+}
+
+.news-card-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Laptoplar için boşluk daraltıldı */
+  width: 100%;
+  height: 100%;
+  padding: 15px; /* Taşma olmaması için padding azaltıldı */
+}
+
+/* KART TASARIMI */
+.card {
+  position: relative;
+  flex: 1; /* Kartların alanı eşit paylaşmasını sağlar */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 15px;
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* OKUNABİLİRLİK İÇİN OVERLAY (Z-INDEX SORUNU ÇÖZÜLDÜ) */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 10%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+  z-index: 1;
+}
+
+/* YAZI ALANI (OVERLAY ÜSTÜNDE) */
+.card-body {
+  position: relative;
+  z-index: 2; /* Yazıları en üste çıkarır */
+  width: 100%;
+}
+
+.card-icon h3 {
+  margin: 0 0 5px 0;
+  font-size: 17px; /* Laptop ekranı için optimize edildi */
+  color: #fff;
+}
+
+.card p {
+  margin: 0;
+  color: #fff;
+  font-size: 13px; /* Laptop ekranı için optimize edildi */
+  line-height: 1.3;
+  /* Laptoplarda dikey taşmayı önlemek için 2 satır sınırı */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Hover Efekti */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.slider-content h1,
+.slider-content p,
+.hero-btn {
+  opacity: 1;
+  transition: opacity 0.8s ease; /* slider animasyonu ile aynı süre */
+}
+
+/* =====================
+   MOBILE (MOBILE-FIRST APPROACH)
+===================== */
+/* ============================================================
+   HERO SECTION RESPONSIVE (992px ve altı)
+   ============================================================ */
+
+@media (max-width: 992px) {
+  .hero-container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  /* SLIDER AYARLARI */
+  .hero-slider {
+    width: 100%;
+    height: auto; /* Sabit yüksekliği kaldır */
+    aspect-ratio: 16 / 9; /* Resmin genişliği tam gözükür, yükseklik orantılı artar */
+    min-height: auto;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Resmin hiçbir yerini kesmez, tamamını gösterir */
+  }
+
+  .slider-content {
+    width: 90%;
+    left: 5%;
+    top: 40%;
+    max-width: none;
+    text-align: center;
+  }
+
+  .slider-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .slider-content p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  /* KARTLAR ALANI */
+  .hero-content {
+    width: 100%;
+    background-color: var(--bg-main);
+  }
+
+  .news-card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .card {
+    height: auto;
+    min-height: 150px;
+  }
+}
+
+/* Küçük Telefonlar İçin (576px ve altı) */
+@media (max-width: 576px) {
+  .hero-slider {
+    aspect-ratio: 4 / 3; /* Telefondaki dikey duruşa göre oran güncellendi */
+  }
+
+  .slider-content h1 {
+    font-size: 1.4rem;
+  }
+
+  .hero-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+    position: relative;
+    bottom: 0; /* Dışarı taşmaması için sıfırla */
+    margin-top: 10px;
+  }
+}

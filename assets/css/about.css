@@ -1,0 +1,164 @@
+/* GENEL */
+.about-us-section {
+  padding: 80px 60px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ÜST ALAN */
+.about-top {
+  display: flex;
+  gap: 60px;
+  align-items: center; /* 🔥 flex-start yerine */
+  margin-bottom: 20px;
+}
+
+/* METİN */
+.about-text {
+  flex: 1;
+}
+
+.about-title {
+  font-size: 2.6rem;
+  margin-bottom: 24px;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-sec);
+}
+
+/* GÖRSEL */
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+
+/* KARTLAR (ALTTA - ORTALI) */
+.info-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background-color: #ffffff;
+  padding: 26px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.1);
+}
+
+.info-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.info-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text-sec);
+}
+
+/* RESPONSIVE */
+/* =====================
+   ABOUT US SECTION - MOBILE
+===================== */
+@media (max-width: 900px) {
+  .about-us-section {
+    padding: 60px 20px; /* Daha dar padding */
+  }
+
+  .about-top {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-title {
+    font-size: 2rem; /* Başlık küçültüldü */
+    margin-bottom: 20px;
+  }
+
+  .about-description {
+    font-size: 0.95rem; /* Metin küçültüldü */
+    line-height: 1.6;
+  }
+
+  .about-image {
+    width: 100%;
+  }
+
+  .about-image img {
+    border-radius: 12px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Kartlar mobilde tek sütun */
+  .info-cards {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 20px 0 0 0;
+  }
+
+  .info-card {
+    padding: 20px;
+  }
+
+  .info-card h3 {
+    font-size: 1rem;
+  }
+
+  .info-card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Daha küçük ekranlar için (telefonlar) */
+@media (max-width: 480px) {
+  .about-us-section {
+    padding: 40px 15px;
+  }
+
+  .about-title {
+    font-size: 1.7rem;
+  }
+
+  .about-description {
+    font-size: 0.85rem;
+  }
+
+  .info-card {
+    padding: 16px;
+  }
+
+  .info-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .info-card p {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,253 @@
+/* ===============================
+   SERVICES SECTION
+================================ */
+
+.services {
+  padding: 20px 20px;
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   SECTION HEADER
+================================ */
+
+.section-header {
+  text-align: center;
+  margin-bottom: 32px;
+  margin-top: 32px;
+}
+
+.section-header h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-header p {
+  font-size: 1.2rem;
+  color: var(--text-sec);
+  max-width: 620px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===============================
+   GRID
+================================ */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+/* ===============================
+   SERVICE CARD
+================================ */
+
+.service-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 38px 34px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  cursor: pointer; /* tıklanabilir hissettirir */
+}
+
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* ===============================
+   TITLE + ICON
+================================ */
+
+.service-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2bb3a3, #1e8f85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-icon i {
+  color: #ffffff;
+  font-size: 1.15rem;
+}
+
+/* ===============================
+   TITLE & TEXT
+================================ */
+
+.service-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-sec);
+  margin: 0;
+  line-height: 1.4;
+  cursor: pointer;
+  padding: 8px 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+
+/* + işareti */
+.service-card h3::after {
+  content: "+";
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: #2bb3a3;
+  transition: transform 0.3s ease;
+}
+
+/* Card aktif olduğunda + 45 derece döner */
+.service-card.active h3::after {
+  transform: rotate(45deg);
+  color: #1e8f85;
+}
+
+.service-desc {
+  font-size: 1.05rem;
+  color: #000000;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+.service-note {
+  font-size: 1.05rem;
+  color: #000000;
+}
+
+/* ===============================
+   NOTE & FEATURES (başlangıçta gizli)
+================================ */
+
+.service-note,
+.service-features,
+.service-btn {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+/* ===============================
+   AKTİF CARD
+================================ */
+
+.service-card.active .service-features,
+.service-card.active .service-note,
+.service-card.active .service-btn {
+  max-height: 1000px; /* yeterince büyük */
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* ===============================
+   FEATURES LIST
+================================ */
+
+.service-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+.service-features li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #1f1f1f;
+  line-height: 1.6;
+}
+
+.service-features li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: #2bb3a3;
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   BUTTON
+================================ */
+
+.service-btn {
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px 28px;
+  background: #2bb3a3;
+  color: #ffffff;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.service-btn:hover {
+  background: #1e8f85;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .services {
+    padding: 70px 15px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .service-card {
+    padding: 28px 22px;
+  }
+
+  .service-title-wrap {
+    gap: 12px;
+  }
+
+  .service-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
