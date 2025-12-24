@@ -22,34 +22,35 @@
             >
           </a>
 
-          <!-- Menü linkleri sağda -->
-          <div class="nav-links">
+          <!-- Hamburger buton (mobil) -->
+          <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+          <!-- Menü linkleri -->
+          <div class="nav-links" id="nav-links">
             <a href="../../index.html">Anasayfa</a>
 
             <!-- DROPDOWN -->
             <div class="nav-item dropdown">
-              <a href="../../index.html#hizmetler">Hizmetler</a>
-
+              <a href="../../index.html#hizmetler" class="dropdown-toggle"
+                >Hizmetler</a
+              >
               <div class="dropdown-menu two-column">
-                <!-- SOL -->
                 <div class="dropdown-col">
-                  <a href="kurumsal.html">
-                    <h4>Kurumsal</h4>
-                  </a>
+                  <h4>Kurumsal</h4>
                   <a href="../kurumsal/web.html">Web</a>
                   <a href="../kurumsal/socialmedia.html">Sosyal Medya</a>
                   <a href="../kurumsal/e-ticaret.html">E-Ticaret</a>
                   <a href="../kurumsal/vr.html">VR Sanal</a>
                   <a href="../kurumsal/domainhosting.html">Domain ve Hosting</a>
-                  <a href="../kurumsal/mobileapp.html"
-                    >Mobil Uygulama Geliştirme</a
-                  >
-                  <a href="../kurumsal/seo.html">Seo ve Google Hizmetleri</a>
+                  <a href="../kurumsal/mobileapp.html">Mobil Uygulama</a>
+                  <a href="../kurumsal/seo.html">Seo ve Google</a>
                   <a href="../kurumsal/360.html">360 Sanal Tur</a>
-                  <a href="../kurumsal/baskı.html">Kurumsal Dijital Çözümler</a>
+                  <a href="../kurumsal/baskı.html">Kurumsal Dijital</a>
                 </div>
-
-                <!-- SAĞ -->
                 <div class="dropdown-col">
                   <h4>Belediye & Kurumlar</h4>
                   <a href="zaman.html">Zaman Makinesi</a>
@@ -58,14 +59,15 @@
                   <a href="akilli_bank.html">Akıllı Bank</a>
                   <a href="akilli_muze.html">Akıllı Müze</a>
                   <a href="robotik_kodlama.html">Robotik Kodlama</a>
-                  <a href="belediye_site_altyapı.html">Belediye Site Altyapı</a>
+                  <a href="belediye_site_altyapı.html">Belediye Site</a>
                   <a href="ag_sistemleri.html">Ağ Sistemleri</a>
-                  <a href="toplu_sms.html">Toplu SMS Çözümleri</a>
-                  <a href="vr_sanal.html">VR Sanal Gerçeklik</a>
-                  <a href="hibe_arge.html">Hibe ve AR-GE Danışmanlığı</a>
+                  <a href="toplu_sms.html">Toplu SMS</a>
+                  <a href="vr_sanal.html">VR Sanal</a>
+                  <a href="hibe_arge.html">Hibe & AR-GE</a>
                 </div>
               </div>
             </div>
+            <a href="#">Eğitim</a>
 
             <a href="../../index.html#about-us">Hakkımızda</a>
             <a href="../../index.html#gundem">Gündem</a>
@@ -73,9 +75,8 @@
               href="https://emiraslan.com"
               target="_blank"
               rel="noopener noreferrer"
+              >Emir Aslan</a
             >
-              Emir Aslan
-            </a>
             <a href="#footer">İletişim</a>
           </div>
         </div>
@@ -387,5 +388,6 @@
         <p>© 2025 Fanus Yazılım. Tüm hakları saklıdır.</p>
       </div>
     </footer>
+    <script src="../../assets/javascript/main.js"></script>
   </body>
 </html>
